@@ -6,7 +6,10 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node src/server.js",
-    "dev": "nodemon src/server.js"
+    "dev": "nodemon src/server.js",
+    "migrate": "node-pg-migrate up",
+    "migrate:down": "node-pg-migrate down",
+    "migrate:create": "node-pg-migrate create --migrations-dir src/database/migrations --migrations-table pgmigrations"
   },
   "keywords": [],
   "author": "",
@@ -14,12 +17,10 @@
   "dependencies": {
     "cors": "^2.8.6",
     "dotenv": "^17.2.3",
-    "express": "^5.2.1",
-    "pg": "^8.17.2"
+    "express": "^5.2.1"
   },
   "type": "module",
   "devDependencies": {
-    "node-pg-migrate": "^8.0.4",
     "nodemon": "3.1.11"
   }
 }
